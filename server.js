@@ -18,10 +18,10 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 
-//dev logging middleware
-if(process.env.NODE_ENV==='development'){   //only when using dev env
-    app.use(morgan('dev'));
-}
+// //dev logging middleware
+// if(process.env.NODE_ENV==='development'){   //only when using dev env
+//     app.use(morgan('dev'));
+// }
 
 //mount routers
 app.use('/',chess);
