@@ -1,6 +1,6 @@
 const express = require('express');
 const dotenv = require('dotenv');
-const morgan = require('morgan');
+
 
 // const cors = require("cors");
 
@@ -18,10 +18,11 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 
-// //dev logging middleware
-// if(process.env.NODE_ENV==='development'){   //only when using dev env
-//     app.use(morgan('dev'));
-// }
+//dev logging middleware
+if(process.env.NODE_ENV==='development'){   //only when using dev env
+    const morgan = require('morgan');
+    app.use(morgan('dev'));
+}
 
 //mount routers
 app.use('/',chess);
