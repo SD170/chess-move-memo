@@ -5,14 +5,15 @@ const asyncHandler = require("../middlewares/async");
 //  @access     Public
 exports.fetchPage = asyncHandler(async (req, res, next) => {
   const htmlFormat = req.body.rawChessData;
-  const DBObject = req.body.DBObject;
-  await res.status(200).json({
-    success: true,
-    data: {
-      htmlFormat,
-      betterFormat: DBObject,
-    },
-  });
+  // const DBObject = req.body.DBObject;
+  // res.status(200).json({
+  //   success: true,
+  //   data: {
+  //     htmlFormat,
+  //     betterFormat: DBObject,
+  //   },
+  // });
+  res.send(htmlFormat);
 });
 
 //  @desc       return a perticuler move
